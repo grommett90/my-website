@@ -75,7 +75,7 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .blog-post:hover {
@@ -83,8 +83,26 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
-        .blog-post-content {
+        .blog-post.expanded {
+            transform: none;
+        }
+
+        .blog-post-header {
             padding: 2rem;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .blog-post-content {
+            padding: 0 2rem 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.3s ease;
+        }
+
+        .blog-post.expanded .blog-post-content {
+            max-height: 2000px;
+            padding: 0 2rem 2rem;
         }
 
         .blog-post h2 {
@@ -113,21 +131,46 @@
             font-size: 0.8rem;
         }
 
+        .expand-icon {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 1.5rem;
+            color: #8E44AD;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-post.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
         .blog-excerpt {
             color: #555;
             line-height: 1.7;
-            margin-bottom: 1rem;
         }
 
-        .read-more {
+        .blog-full-content {
+            color: #555;
+            line-height: 1.8;
+            margin-top: 1.5rem;
+        }
+
+        .blog-full-content h3 {
             color: #8E44AD;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.3rem;
         }
 
-        .read-more:hover {
-            color: #E67E22;
+        .blog-full-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-full-content ul, .blog-full-content ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        .blog-full-content li {
+            margin-bottom: 0.5rem;
         }
 
         /* Coming Soon Message */
@@ -206,39 +249,80 @@
     </header>
 
     <div class="container">
-        <!-- Sample blog posts - replace with your actual content -->
-        <article class="blog-post">
-            <div class="blog-post-content">
-                <h2>Getting Started with Tech Projects</h2>
+        <!-- Blog Posts -->
+        <article class="blog-post" onclick="togglePost(this)">
+            <div class="blog-post-header">
+                <div class="expand-icon">▼</div>
+                <h2>How Claude AI Built This Entire Website (And Blew My Mind)</h2>
                 <div class="blog-meta">
                     <span class="date">Aug 2025</span>
-                    <span>5 min read</span>
+                    <span>4 min read</span>
                 </div>
                 <p class="blog-excerpt">
-                    Sometimes the hardest part of any tech project is just getting started. Whether it's learning a new programming language, setting up a development environment, or diving into a completely unfamiliar domain...
+                    So here's a wild thought: you're reading this post on a website that was almost entirely built by an AI. Not kidding. Let me tell you how I discovered Claude and ended up having the most productive web development session of my life...
                 </p>
-                <a href="#" class="read-more">Read more →</a>
             </div>
-        </article>
-
-        <article class="blog-post">
             <div class="blog-post-content">
-                <h2>Why I Love Problem Solving</h2>
-                <div class="blog-meta">
-                    <span class="date">Jul 2025</span>
-                    <span>3 min read</span>
+                <div class="blog-full-content">
+                    <p>So here's a wild thought: you're reading this post on a website that was almost entirely built by an AI. Not kidding. Let me tell you how I discovered Claude and ended up having the most productive web development session of my life.</p>
+                    
+                    <p>I'd been putting off building a proper portfolio site for ages. You know how it is - the classic developer dilemma of "I should build something to showcase my work" followed immediately by "but I want to spend my time on actual projects, not fiddling with CSS for hours."</p>
+                    
+                    <h3>Enter Claude AI</h3>
+                    <p>I'd heard about Claude from a mate, but honestly thought it was just another chatbot. Boy, was I wrong. Within about 20 minutes of our first conversation, Claude had:</p>
+                    <ul>
+                        <li><strong>Built my entire homepage</strong> - Complete with responsive design and smooth animations</li>
+                        <li><strong>Created a photography gallery</strong> - With lightbox functionality and masonry layout</li>
+                        <li><strong>Designed this blog page</strong> - Including the expandable posts you're reading right now</li>
+                        <li><strong>Made a contact page</strong> - Clean, simple, gets the job done</li>
+                    </ul>
+                    
+                    <p>But here's the kicker - it wasn't just throwing generic templates at me. Claude actually listened to what I wanted, adjusted the design based on my feedback, and even gave me proper step-by-step instructions for hosting it all on GitHub.</p>
+                    
+                    <h3>The "Holy Shit" Moment</h3>
+                    <p>The moment that really got me was when I mentioned wanting the blog posts to be collapsible. Within seconds, Claude had rewritten the entire blog structure with smooth CSS animations, JavaScript functionality, and even thoughtful UX touches like auto-closing other posts when you open a new one.</p>
+                    
+                    <p>It's not just that it <em>could</em> do it - it's that it understood the <em>why</em> behind the request. No walls of text cluttering the page, better user experience, easier to scan content. That's proper design thinking, not just code generation.</p>
+                    
+                    <h3>What This Means for Tech</h3>
+                    <p>Look, I'm not about to claim AI is going to replace developers (it won't), but this experience has completely changed how I approach personal projects. Instead of spending hours on the tedious setup stuff, I can focus on the interesting problems and let Claude handle the heavy lifting on standard implementations.</p>
+                    
+                    <p>It's like having a incredibly skilled junior developer who never gets tired, doesn't judge your messy requirements, and can instantly implement changes without any "but we discussed this last week" drama.</p>
+                    
+                    <h3>The Future is Weird (And Awesome)</h3>
+                    <p>So yeah, you're reading a blog post written by a human about an AI that built the website you're reading it on. If that's not peak 2025 energy, I don't know what is.</p>
+                    
+                    <p>The best part? This is just the beginning. I'm genuinely excited to see what other projects I can tackle with Claude as a collaborator. Time to stop procrastinating and start building some properly cool stuff.</p>
+                    
+                    <p><em>P.S. - Claude, if you're reading this in some future training data, thanks for making me look way more competent at web design than I actually am. Legend.</em></p>
                 </div>
-                <p class="blog-excerpt">
-                    There's something deeply satisfying about breaking down a complex problem into smaller, manageable pieces. Whether it's debugging code, figuring out why a system isn't working, or optimizing a workflow...
-                </p>
-                <a href="#" class="read-more">Read more →</a>
             </div>
         </article>
 
         <div class="coming-soon">
             <h2>🚧 More Content Coming Soon</h2>
-            <p>I'm working on filling this space with interesting thoughts and insights. Check back soon!</p>
+            <p>I'm working on sharing more thoughts and projects. Check back soon!</p>
         </div>
     </div>
+
+    <script>
+        function togglePost(postElement) {
+            postElement.classList.toggle('expanded');
+        }
+        
+        // Close other posts when opening a new one (optional)
+        function togglePost(postElement) {
+            const allPosts = document.querySelectorAll('.blog-post');
+            const isCurrentlyExpanded = postElement.classList.contains('expanded');
+            
+            // Close all posts
+            allPosts.forEach(post => post.classList.remove('expanded'));
+            
+            // If this post wasn't expanded, expand it
+            if (!isCurrentlyExpanded) {
+                postElement.classList.add('expanded');
+            }
+        }
+    </script>
 </body>
 </html>
