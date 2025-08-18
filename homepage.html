@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scott Grimmett - Portfolio & Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #8E44AD 0%, #E67E22 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-left {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            margin: 0 auto 40px;
+            background: linear-gradient(45deg, #8E44AD, #E67E22);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: white;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 400px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .hero-right {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .navigation-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #8E44AD, #E67E22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .nav-card {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(142, 68, 173, 0.2);
+        }
+
+        .nav-card-icon {
+            font-size: 3rem;
+            min-width: 70px;
+            text-align: center;
+            background: linear-gradient(135deg, #8E44AD, #E67E22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .nav-card-content p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+
+
+        /* Animations */
+        .hero-left {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .hero-right {
+            animation: slideInRight 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .nav-card {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .nav-card:nth-child(1) { animation-delay: 0.3s; }
+        .nav-card:nth-child(2) { animation-delay: 0.5s; }
+        .nav-card:nth-child(3) { animation-delay: 0.7s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            .hero-grid {
+                gap: 60px;
+            }
+            
+            .container {
+                padding: 0 30px;
+            }
+        }
+
+        @media (max-width: 968px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero-right {
+                padding: 40px;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .profile-image {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .nav-card-icon {
+                min-width: auto;
+            }
+            
+            .hero-right {
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-left">
+                    <div class="profile-image">
+                        <!-- <img src="your-photo.jpg" alt="Scott Grimmett"> -->
+                        📸
+                    </div>
+                    
+                    <h1>Scott Grimmett</h1>
+                    <p class="subtitle">Tech Enthusiast</p>
+                    
+                    <p class="description">
+                        Welcome to my site. Explore who I am and how I think below.
+                    </p>
+                </div>
+                
+                <div class="hero-right">
+                    <h2 class="navigation-title">My Work</h2>
+                    
+                    <div class="nav-cards">
+                        <a href="#photography" class="nav-card">
+                            <div class="nav-card-icon">📷</div>
+                            <div class="nav-card-content">
+                                <h3>Photography</h3>
+                            </div>
+                        </a>
+                        
+                        <a href="#blog" class="nav-card">
+                            <div class="nav-card-icon">✏️</div>
+                            <div class="nav-card-content">
+                                <h3>Blog</h3>
+                            </div>
+                        </a>
+                        
+                        <a href="#contact" class="nav-card">
+                            <div class="nav-card-icon">📧</div>
+                            <div class="nav-card-content">
+                                <h3>Contact</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
