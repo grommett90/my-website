@@ -101,7 +101,7 @@
         }
 
         .blog-post.expanded .blog-post-content {
-            max-height: 2000px;
+            max-height: none;
             padding: 0 2rem 2rem;
         }
 
@@ -264,15 +264,13 @@
             </div>
             <div class="blog-post-content">
                 <div class="blog-full-content">
-                    <p></p>
-                    
-                    <p>I'd been putting off building a proper portfolio site for ages. You know how it is - the classic developer dilemma of "I should build something to showcase my work" followed immediately by "but I want to spend my time on actual projects, not fiddling with CSS for hours."</p>
+                    <p>I'd been putting off building a proper portfolio site for a long time, call it procrastination or just lazy.</p>
                     
                     <h3>Enter Claude AI</h3>
-                    <p>I'd heard about Claude from a mate, but honestly thought it was just another chatbot. Boy, was I wrong. Within about 20 minutes of our first conversation, Claude had:</p>
+                    <p>I'd heard about Claude from my friend Josh, and honestly thought it was just another chatbot. At first I admit I didn't think I'd be impressed by yet another LLM. However I can safely say I was wrong, It's obviously similar but after tweaking the settings and adding some nuances like swearing and sass. I laughed whilst it had within about 20 minutes of our first conversation:</p>
                     <ul>
                         <li><strong>Built my entire homepage</strong> - Complete with responsive design and smooth animations</li>
-                        <li><strong>Created a photography gallery</strong> - With lightbox functionality and masonry layout</li>
+                        <li><strong>Created a photography gallery</strong> - With lightbox functionality and masonry layout(at the time of writing I haven't actually uploaded any photos)</li>
                         <li><strong>Designed this blog page</strong> - Including the expandable posts you're reading right now</li>
                         <li><strong>Made a contact page</strong> - Clean, simple, gets the job done</li>
                     </ul>
@@ -299,6 +297,59 @@
             </div>
         </article>
 
+        <article class="blog-post" onclick="togglePost(this)">
+            <div class="blog-post-header">
+                <div class="expand-icon">▼</div>
+                <h2>Confessions of a Stereotypical Metalhead Tech Nerd (Yes, I'm Everything You'd Expect)</h2>
+                <div class="blog-meta">
+                    <span class="date">Aug 2025</span>
+                    <span>6 min read</span>
+                </div>
+                <p class="blog-excerpt">
+                    I'm basically every stereotype rolled into one person. Stretched ears, actually covered in tattoos (I have less free space than tattoo'd space now), Used to have snake bite piercings (removed to be more professional lol), wear band tee's more often than not, and still think Vans are an appropriate footwear choice in my 30's without insoles.
+                </p>
+            </div>
+            <div class="blog-post-content">
+                <div class="blog-full-content">
+                    <p>I am literally every stereotype you'd imagine when someone says "metalhead tech nerd with ADHD and autism." And no, not the weird new obsession with those nuerological disorders, the actual debilitating type. Like procastinating when I need to piss or being so unaware of social cues I have missed thousands of oppurtunities.</p>
+                    
+                    <h3>The Music Chronicles</h3>
+                    <p>When I need to focus, there's only a few bands that cut through the mental noise: The Black Dahlia Murder, Polaris, and Lorna Shore. Something about the chaotic symphony of relentless riffs, blast beats, or catchy vocals just locks my brain into hyperfocus mode.</p>
+                    
+                    <p>Now, I'm a bit of snob (or knob depending on your taste) about metal genres, and I'm not sorry. Give me metalcore, deathcore, some decent hardcore, old rock, nu-metal, and actually talented vocalists - that's the good stuff. But grunge? Nah, Miss me with that awful shit. Black metal? Sounds like someone recorded a washing machine having an existential crisis.</p>
+                    
+                    <p>I used to do some vocals back in my teens - nothing serious, just low-level mucking around with mates. I have met hundreds of amazing people in my youth whilst helping out as a roadie, promo guy, or just helping out people at shows when and where I could</p>
+                    
+                    <h3>The ADHD/Autism Tango</h3>
+                    <p>Here's the daily struggle: my brain desperately wants to be SUPER organised. I've got grand plans for perfect systems, colour-coded everything, the works. But then my ADHD brain says "lol nope" and suddenly I'm three hours deep researching RF hacking techniques when I was supposed to be doing laundry.</p>
+                    
+                    <p>Speaking of RF - that's my day job and my latest obsession. Working at Motorola as an engineer has opened up this whole world of RF, and ofcourse ethical hacking possibilities. There's something beautiful about understanding how these invisible signals work, then figuring out how to intercept or manipulate them. It's like being a wizard, but with more math and fewer robes. But I also would be impartial to wearing a robe with a bunch of hobbled together devices.</p>
+                    
+                    <h3>Through the Lens</h3>
+                    <p>When I'm not gaming or working, you'll find me with a camera. Nature photography, birding (yes, I'm that nerd who gets excited about capturing the perfect shot of some rare bird), and street photography. There's something meditative about it - probably the only time my brain actually slows down.</p>
+                    
+                    <p>The autism side loves the technical precision of getting the perfect shot, while the ADHD side enjoys the unpredictability of street photography. It's like my brain's competing personalities found a hobby they can both enjoy.</p>
+                    
+                    <h3>Hockey and Broken Dreams</h3>
+                    <p>LA Kings fan through and through - yeah, I know, supporting a team from the other side of the world while living in Australia. But once you're locked in, you're locked in. Used to play myself until my knees decided they'd had enough of being slammed into boards and ice. These days I stick to yelling at the TV like every other passionate fan with zero athletic ability left.</p>
+                    
+                    <h3>The Tech Setup</h3>
+                    <p>Ubuntu 12.04 LTS was my gateway into Linux, and I've had Ubuntu running on at least one machine in my house ever since. Not because I'm some hardcore Linux evangelist - just because it worked and I'm apparently too lazy to try anything else. If it ain't broke, don't fix it, right?</p>
+                    
+                    <p>Recently fell down the homelab rabbit hole thanks to Jeff Geerling's content. Nothing like watching a guy get genuinely excited about enterprise hardware to make you want to turn your spare room into a data center. The wife approval factor is growing slowly, especially after upgrading to a gigabit connection and setting up a local 'streaming' service freeing us from the never ending subscription enshitification efforts by the corporate overlords.</p>
+                    
+                    <h3>Embracing the Stereotype</h3>
+                    <p>Look, I could try to be more "well-rounded" or whatever, but why fight what works? My ADHD brain found things that capture its attention, my autism loves the deep technical rabbit holes, and my general personality gravitates toward loud music and complex technology.</p>
+                    
+                    <p>Sure, as I get older I find the need to be more 'normal' but only in the sense that being an outspoken goofy bloke doesn't translate to getting promoted or being looked at for more techniically difficult work.</p>
+                    
+                    <p>Besides, stereotypes exist for a reason. Sometimes you just are exactly what people expect, and that's perfectly fine.</p>
+                    
+                    <p><em>A little insight to the insanity of me living my life.</em></p>
+                </div>
+            </div>
+        </article>
+
         <div class="coming-soon">
             <h2>🚧 More Content Coming Soon</h2>
             <p>I'm working on sharing more thoughts and projects. Check back soon!</p>
@@ -306,11 +357,6 @@
     </div>
 
     <script>
-        function togglePost(postElement) {
-            postElement.classList.toggle('expanded');
-        }
-        
-        // Close other posts when opening a new one (optional)
         function togglePost(postElement) {
             const allPosts = document.querySelectorAll('.blog-post');
             const isCurrentlyExpanded = postElement.classList.contains('expanded');
